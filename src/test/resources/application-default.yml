@@ -1,0 +1,11 @@
+logging:
+  level:
+    com:
+      fairwaysoftware: DEBUG
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
