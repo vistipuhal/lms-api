@@ -12,7 +12,7 @@ public interface LeagueMemberRepository extends JpaRepository<LeagueMemberEntity
     @Query("select e from LeagueMember e where e.league.leagueId = :leagueId")
     List<LeagueMemberEntity> findByLeagueId(@Param("leagueId") Integer leagueId);
 
-    @Query("select e from LeagueMember e where e.userProfile.userId = :userId")
+    @Query("select e from LeagueMember e where e.user.userId = :userId")
     List<LeagueMemberEntity> findByUserId(@Param("userId") Integer userId);
 
 }

@@ -13,10 +13,14 @@ public class User {
 
     private Integer userId;
 
-    @NotEmpty
     private String email;
 
-    @NotEmpty
     private String passwordHash;
+
+    @NotEmpty
+    private String firstName;
+
+    @NotEmpty
+    private String lastName;
 
 }

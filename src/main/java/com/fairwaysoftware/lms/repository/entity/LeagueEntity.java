@@ -17,12 +17,12 @@ public class LeagueEntity {
     private static final String SEQ = "league_id_seq";
 
     @Id
-    @SequenceGenerator(name = SEQ, sequenceName = SEQ, initialValue = 1000, allocationSize = 10)
+    @SequenceGenerator(name = SEQ, sequenceName = SEQ, initialValue = 1000)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQ)
     @Column(name = "league_id", updatable = false)
     private Integer leagueId;
 
-    @Column(name = "name", nullable = false, length = 100, unique = true)
+    @Column(name = "name", length = 100, nullable = false, unique = true)
     @NotEmpty
     private String name;
 

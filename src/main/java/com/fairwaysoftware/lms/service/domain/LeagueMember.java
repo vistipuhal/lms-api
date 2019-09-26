@@ -17,6 +17,6 @@ public class LeagueMember {
     private League league;
 
     @NotNull
-    private UserProfile userProfile;
+    private User user;
 
 }
