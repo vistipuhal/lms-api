@@ -3,3 +3,6 @@ insert into app_user (user_id, email, password_hash, first_name, last_name) valu
 insert into league (league_id, name) values (1, 'Kingwood Men''s Golf Association');
 insert into league_member (league_member_id, league_id, user_id) values (1, 1, 1);
 
+insert into league (league_id, name) values (2, 'Deerwood Men''s Golf Association');
+insert into league_member (league_member_id, league_id, user_id) values (2, 2, 1);
+

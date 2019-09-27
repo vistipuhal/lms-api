@@ -1,5 +1,6 @@
 package com.fairwaysoftware.lms.security;
 
+import com.fairwaysoftware.lms.Application;
 import com.fairwaysoftware.lms.service.UserService;
 import com.fairwaysoftware.lms.service.domain.User;
 import lombok.AllArgsConstructor;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("api/auth")
+@RequestMapping(Application.BASE_PATH + "/auth")
 @AllArgsConstructor
 public class AuthController {
 
