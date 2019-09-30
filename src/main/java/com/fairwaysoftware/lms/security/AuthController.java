@@ -4,7 +4,6 @@ import com.fairwaysoftware.lms.Application;
 import com.fairwaysoftware.lms.service.UserService;
 import com.fairwaysoftware.lms.service.domain.User;
 import lombok.AllArgsConstructor;
-import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +17,6 @@ public class AuthController {
     private UserService userService;
     private PasswordEncoder passwordEncoder;
     private TokenHelper tokenHelper;
-    private ModelMapper modelMapper;
 
     @PostMapping
     public AuthResponse post(@RequestBody @Valid AuthRequest authRequest) {

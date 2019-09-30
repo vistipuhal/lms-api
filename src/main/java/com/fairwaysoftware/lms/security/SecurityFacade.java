@@ -15,4 +15,10 @@ public class SecurityFacade {
         return Optional.of((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
     }
 
+    public static void isCurrentUser(Integer id) {
+        if (id == null || getCurrentUserId() == null || !getCurrentUserId().equals(id)) {
+            throw new SecurityException();
+        }
+    }
+
 }
