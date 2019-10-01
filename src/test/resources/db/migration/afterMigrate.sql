@@ -6,3 +6,7 @@ insert into league_member (league_member_id, league_id, user_id) values (1, 1, 1
 insert into league (league_id, name) values (2, 'Deerwood Men''s Golf Association');
 insert into league_member (league_member_id, league_id, user_id) values (2, 2, 1);
 
+insert into season (season_id, league_id, start_date, end_date) values (1, 1, '2019-10-01', '2020-09-30');
+
+insert into event (event_id, league_id, season_id, name, description, event_date, event_time) values (1, 1, 1, '4 Man Scramble', 'It''s a 4 man scramble', '2019-10-30', '09:00:00');
+
