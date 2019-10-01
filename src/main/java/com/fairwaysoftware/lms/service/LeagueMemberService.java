@@ -25,25 +25,39 @@ public class LeagueMemberService {
     public List<LeagueMember> findByLeagueId(Integer leagueId) {
         return repository.findByLeagueId(leagueId).stream()
                 .map(e -> modelMapper.map(e, LeagueMember.class))
+                .map(leagueMember -> {
+                    leagueMember.getUser().setPasswordHash(null);
+                    return leagueMember;
+                })
                 .collect(Collectors.toList());
     }
 
     public List<LeagueMember> findByUserId(Integer userId) {
         return repository.findByUserId(userId).stream()
                 .map(e -> modelMapper.map(e, LeagueMember.class))
+                .map(leagueMember -> {
+                    leagueMember.getUser().setPasswordHash(null);
+                    return leagueMember;
+                })
                 .collect(Collectors.toList());
     }
 
     public Optional<LeagueMember> findById(Integer id) {
         return repository.findById(id)
-                .map(e -> modelMapper.map(e, LeagueMember.class));
+                .map(e -> modelMapper.map(e, LeagueMember.class))
+                .map(leagueMember -> {
+                    leagueMember.getUser().setPasswordHash(null);
+                    return leagueMember;
+                });
     }
 
     @Transactional
     public LeagueMember save(@Valid LeagueMember domain) {
         LeagueMemberEntity entity = modelMapper.map(domain, LeagueMemberEntity.class);
         entity = repository.save(entity);
-        return modelMapper.map(entity, LeagueMember.class);
+        domain = modelMapper.map(entity, LeagueMember.class);
+        domain.getUser().setPasswordHash(null);
+        return domain;
     }
 
 }
