@@ -9,10 +9,10 @@ import java.util.List;
 
 public interface LeagueMemberRepository extends JpaRepository<LeagueMemberEntity, Integer> {
 
-    @Query("select e from LeagueMember e where e.league.leagueId = :leagueId")
+    @Query("select e from LeagueMember e where e.league.leagueId = :leagueId order by e.user.lastName, e.user.firstName")
     List<LeagueMemberEntity> findByLeagueId(@Param("leagueId") Integer leagueId);
 
-    @Query("select e from LeagueMember e where e.user.userId = :userId")
+    @Query("select e from LeagueMember e where e.user.userId = :userId order by e.user.lastName, e.user.firstName")
     List<LeagueMemberEntity> findByUserId(@Param("userId") Integer userId);
 
 }
